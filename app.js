@@ -23,4 +23,15 @@ const getNthElement = (arr, numEntero) => {
 
 console.log(getNthElement(arr, numEntero));
 
+// Ejercicio 3, crea una funcion que al pasarle un string con doble espacio entremedio, la devuelva con espacios normales
+
+const stringDouble = "string  with  double  spaces"; 
+
+const convertDoubleSpaceToSingle = () => {
+  let stringSimple = stringDouble.split(" "); 
+  console.log(stringSimple); 
+  return stringSimple.join(" "); 
+}; 
+
+console.log(convertDoubleSpaceToSingle(stringDouble)); 
 
