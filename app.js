@@ -35,3 +35,16 @@ const convertDoubleSpaceToSingle = () => {
 
 console.log(convertDoubleSpaceToSingle(stringDouble)); 
 
+//Ejercicio 4, crea una funcion que valide nombre y clave de usuario, la primera si es mayor a 3 caracteres, sera true, y la segunda minimo 8
+let userName = "Mariel"; 
+let password = "miclave1234";
+
+const areValidCredentials = () => {
+  let sizeUserName = userName.length;
+  let sizePassword = password.length; 
+  if (sizeUserName > 3 && sizePassword >= 8) {
+    return true; 
+  } else { return false; }
+};
+
+console.log(areValidCredentials(userName, password)); 
