@@ -48,3 +48,71 @@ const areValidCredentials = () => {
 };
 
 console.log(areValidCredentials(userName, password)); 
+
+// Ejercicio 5, crear una funcion que busque dentro de un array, que numeros al sumarse dan como resultado un numero especifico.
+const numbers = [3, 34, 4, 12, 5, 2];
+const result = 9;   
+
+const findPairForSum = ((numbers, result) => { 
+ let okNumbers = [];  
+ const compareSum = ((a, b) => {
+ if (a + b === result) {okNumbers.push(a, b)} 
+ return okNumbers; })
+});
+numbers.filter(compareSum(a, b));
+
+console.log(findPairForSum(numbers, result)); 
+
+/*nst findPairForSum = ((array, num)=>{
+  let result=[];
+  const compareSum=((a,b)=>{
+      if(a+b===num){
+          result.push(a,b);
+      }
+  });
+  array.filter(compareSum);
+  return result;
+}); */ 
+
+//ejercicio 6 crear una funcion llamada "filterOddElements" que devuelva solo los numeros impares de un array
+
+const numbersArr = [1, 2, 3, 4, 5];
+let numImpar = [];
+const filterOddElements = ((arr) => {
+  arr.forEach(num => {
+    if(num % 2 !== 0) {
+      numImpar.push(num);
+    }  
+  });
+  return numImpar; 
+})
+
+console.log(filterOddElements(numbersArr))
+
+//ejercicio 7 crea una funcion llamada findShortestWordAmongMixedElements, que devuelva la cadena mas corta dentro de un array de strings
+const strArr = [4, 'two', 2, 'three']; 
+let shortest = []; 
+const findShortestWordAmongMixedElements = ((arr) => {
+  const newArr = arr.filter(elem => typeof elem == 'string');
+    for(let i = 0; i< newArr.length; i++){
+      if(newArr[i].length < newArr[i++].length){
+        shortest = newArr[i];
+      } 
+    }   
+  return shortest;
+})
+console.log(findShortestWordAmongMixedElements(strArr));
+
+//ejercicio 8 crea una funcion getLongestWordOfMixedElements que devuelve la cadena mas larga
+const strArr2 = [3, 'word', 5, 'up', 3, 1];
+let longest = [];
+const getLongestWordOfMixedElements = ((arr) => {
+  const newArr = arr.filter(elem => typeof elem == 'string');
+  newArr.forEach(palabra => {
+    if(longest.length < palabra.length){
+      longest = palabra;
+    }
+  })
+  return longest; 
+})
+console.log(getLongestWordOfMixedElements(strArr2));
